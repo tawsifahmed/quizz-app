@@ -9,7 +9,7 @@ const Header = () => {
                 <p className='text-4xl font-bold'>Quizzify Test</p>
             </div>
             <div>
-                <Link to='/home'>Home</Link>
+                <Link to='/'>Home</Link>
                 <Link to='/statistics'>Statistics</Link>
                 <Link to='/blog'>Blog</Link>
             </div>
