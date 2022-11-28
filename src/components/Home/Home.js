@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../Header/Header'
+import './Home.css'
 
 const Home = () => {
     return (
         <div>
 
-            <h2>this is home</h2>
+            <h2 className='text-2xl italic font-semibold'>Welcome to <span>Quizzify</span>. Test your skills now!!!</h2>
         </div>
     );
 };
