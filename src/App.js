@@ -10,11 +10,27 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/', element: <Main></Main>, children: [
-        { path: '/', element: <Home></Home> },
+        {
+          path: '/',
+          loader: async () => {
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
+          element: <Home></Home>
+        },
         { path: '/statistics', element: <Statistics></Statistics> },
         { path: '/blog', element: <Blog></Blog> }
       ]
     },
+    {
+      path: '*', element: <div className="text-center mt-10 pt-10 text-5xl"><div><br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        404, page not found</div></div>
+    }
 
 
   ])
