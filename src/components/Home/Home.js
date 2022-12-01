@@ -37,16 +37,22 @@ const Home = () => {
             </div>
             <br />
             <br />
-            <div>
-                <h2>Choose a Quiz Type: {quizItems.data.length}</h2>
-                {
-                    quizItems.data.map(quizItem => <QuizItem
-                        key={quizItems.data.id}
-                        quizItem={quizItem}
-                    >
+            <h2 className='text-4xl  mt-5'>Choose a Quiz Type</h2>
+            <br />
+            <hr className='mx-10' />
+            <br />
+            <div className='mx-11'>
+                <div className=' justify-items-center grid gap-2 grid-cols-1 md:grid-cols-2 lg:gap-5 lg:grid-cols-3 xl:grid-cols-4'>
 
-                    </QuizItem>)
-                }
+                    {
+                        quizItems.data.map(quizItem => <QuizItem
+                            key={quizItems.data.id}
+                            quizItem={quizItem}
+                        >
+
+                        </QuizItem>)
+                    }
+                </div>
             </div>
 
         </div>
