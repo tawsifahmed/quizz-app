@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import QuizOptions from '../QuizOptions/QuizOptions';
 
 const QuizQuestions = () => {
-    const [selected, setSelected] = useState('');
+
 
     const quiz = useLoaderData();
 
     console.log(quiz);
-    const handleChange = event => {
-        console.log(event.target.value);
-
-        setSelected(event.target.value);
-
-    };
 
 
 
@@ -27,31 +22,15 @@ const QuizQuestions = () => {
             <br />
             <div>
                 {
-                    quiz.data.questions.map((question, i) => <div
-                        id={question.id}>
-                        <div className='flex justify-around'>
-                            <h3 className='text-lg font-bold p-5'>Quiz {i + 1}.<span className='text-violet-200'>..</span>
-                                {question.question.slice(3, -4)}</h3>
-                            <p>{question.correctAnswer}</p>
-                        </div>
-                        <div className='md:mx-8 xl:mx-72'>
-                            <div className='justify-items-center grid grid-cols-1 md:grid-cols-2'>
-                                {question.options.map(option => <div className='mt-5 bg-orange-50 w-80 h-24 border rounded p-5'><input onChange={handleChange}
-                                    type="radio"
-                                    id={option}
-                                    value={option}
-                                    checked={selected === option}
-
-                                />
-                                    <label htmlFor={option}> {option}</label></div>)}
-                            </div>
-                        </div>
-
-                    </div>)
+                    quiz.data.questions.map((questionn, i) => <QuizOptions
+                        questionn={questionn}
+                        id={questionn.id}
+                        ii={i}
+                    ></QuizOptions>)
                 }
             </div>
 
-        </div>
+        </div >
     );
 };
 
