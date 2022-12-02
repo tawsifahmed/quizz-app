@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { FaEye } from 'react-icons/fa'
 
-const QuizOptions = ({ questionn }) => {
+const QuizOptions = ({ questionn, }) => {
+
 
     const { question, correctAnswer, options } = questionn;
     const [selected, setSelected] = useState();
@@ -33,14 +34,15 @@ const QuizOptions = ({ questionn }) => {
     return (
         <div>
             <div className='flex justify-around'>
-                <h3 className='text-lg font-bold p-5'>Quiz { }.<span className='text-violet-200 justify-self-center'>..</span>
-                    {question.slice(3, -4)}</h3>
-                <button className='justify-self-end'>
+
+                <div className='w-1/2'> <h3 className='text-start text-lg font-bold p-5'> ➛<span className='text-violet-200 justify-self-center'>..</span>
+                    {question.slice(3, -4)}</h3></div>
+                <button className='justify-self-end btn'>
                     <input onClick={handleC} className="invisible" type="checkbox"
                         id={correctAnswer}
                         value={correctAnswer}
 
-                        checked={isCorrect === { correctAnswer }}
+                        defaultChecked={isCorrect === { correctAnswer }}
 
                     />
                     <Toaster />
