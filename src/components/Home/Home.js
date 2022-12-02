@@ -37,7 +37,7 @@ const Home = () => {
             </div>
             <br />
             <br />
-            <h2 className='text-4xl  mt-5'>Choose a Quiz Type</h2>
+            <h2 className='text-4xl font-bold mt-5'>Choose a Quiz Type</h2>
             <br />
             <hr className='mx-10' />
             <br />
@@ -46,7 +46,7 @@ const Home = () => {
 
                     {
                         quizItems.data.map(quizItem => <QuizItem
-                            key={quizItems.data.id}
+                            key={quizItem.id}
                             quizItem={quizItem}
                         >
 

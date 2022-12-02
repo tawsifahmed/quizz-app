@@ -14,3 +14,18 @@
     color: crimson;
     text-decoration: underline;
 }
+
+.logo:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.logo1:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.logo2:hover {
+    color: black;
+    text-decoration: none;
+}
